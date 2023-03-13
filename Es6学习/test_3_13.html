@@ -2,15 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ES6</title>
     <script type="text/javascript">
         window.onload = function (){
-           const  p  = new Promise((resolve,reject = function () {
+         /*  const  p  = new Promise((resolve,reject = function () {
                console.log("reject");
            }) => {
                console.log("Promise");
                resolve();
-           });
+           });*/
+
+            const p = new Promise((resolve,reject) => {
+                 setTimeout(() => {
+                     console.log("用户数据");
+                     resolve();
+                 },1000);
+            });
+
+          const result =  p.then(value => {
+                console.log(value);
+            }, reason => {
+                console.warn(reason);
+            })
+
+            console.log(result);
         };
     </script>
 </head>
