@@ -5,13 +5,12 @@
     <title>Title</title>
     <script type="text/javascript">
         window.onload = function (){
-            const x = 1;
-            if (x === 1) {
-                let x = 2;
-                console.log(x);
-            }
-            console.log(x);
-            window.alert(x);
+           const  p  = new Promise((resolve,reject = function () {
+               console.log("reject");
+           }) => {
+               console.log("Promise");
+               resolve();
+           });
         };
     </script>
 </head>
