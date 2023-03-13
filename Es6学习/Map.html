@@ -5,7 +5,22 @@
     <title>Map</title>
   <script type="text/javascript">
     window.onload = function (){
+      let m = new Map();
+      m.set('name','名字');
+      m.set('change',function (){
+        console.log("我可以学习东西");
+      });
+      let key = {
+        school:'玉林'
+      };
+      m.set(key,['广西','广东','北海'])
 
+      console.log(m);
+      console.log(m.get('change'));
+      console.log(m.get(key));
+      for (let v of m){
+        console.log(v);
+      }
     };
   </script>
 </head>
