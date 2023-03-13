@@ -5,8 +5,8 @@
     <title>Set</title>
   <script type="text/javascript">
     window.onload = function (){
-      let s = new Set();
-      let s2 = new Set(['大事','小事','好事','小事']);
+    /*  let s = new Set();
+      let s2 = new Set(['大事','小事','好事','小事']);*/
    /*   console.log(s2);
       console.log(s2.size);//大小
       s2.add('不好');
@@ -18,9 +18,32 @@
       s2.clear();
       console.log(s2);*/
 
-      for (let v of s2){
+     /* for (let v of s2){
         console.log(v);
-      }
+      }*/
+
+      let arr = [1,2,3,4,5,4,3,2,1];
+     /* let result = [...new Set(arr)];
+      console.log(result);*/
+      let arr2 = [4,5,6,6,6,6];
+     /* let result = [...new Set(arr)].filter(item => {
+        let s2 = new Set(arr2);
+      /!*  if (s2.has(item)){
+          return true;
+        }else{
+          return false;
+        }*!/
+        return s2.has(item);
+      });*/
+      // console.log(result);
+      /*let result = [...new Set(arr)].filter(item => new Set(arr2).has(item));
+      console.log(result);*/
+
+  /*    let union = new Set([...arr,...arr2]);
+      console.log(union);*/
+
+      let diff = [...new Set(arr)].filter(item => !(new Set(arr2).has(item)));
+      console.log(diff);
     };
   </script>
 </head>
