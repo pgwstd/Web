@@ -29,7 +29,19 @@
             console.log(result);
             window.alert(result);*/
 
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject("出错了");
+            },1000)
+        });
 
+      /*  p.then(function (value){},function (reason){
+            console.error(reason);
+        })*/
+
+            p.catch(function (reason){
+                console.warn(reason);
+            })
 
         };
     </script>
