@@ -5,6 +5,21 @@
     <title>Class</title>
     <script type="text/javascript">
         window.onload = function () {
+            /*     class Phone {
+                     constructor(brand, price) {
+                         this.brand = brand;
+                         this.price = price;
+                     }
+
+                     call() {
+                         console.log("我可以打电话");
+                     }
+                 }
+
+                 let onePlus = new Phone("1+", 5900);
+                 console.log(onePlus);*/
+
+
             class Phone {
                 constructor(brand, price) {
                     this.brand = brand;
@@ -16,8 +31,24 @@
                 }
             }
 
-            let onePlus = new Phone("1+", 5900);
-            console.log(onePlus);
+            class SmartPhone extends Phone{
+                constructor(brand,price,color,size) {
+                    super(brand,price);
+                    this.color = color;
+                    this.size = size;
+                }
+                photo(){
+                    console.log("拍照");
+                }
+                playGame(){
+                    console.log("打游戏");
+                }
+            }
+            const x = new SmartPhone('小米',5999,'white','5.5');
+            // console.log(x);
+            x.call();
+            x.photo();
+            x.playGame();
         };
     </script>
 </head>
