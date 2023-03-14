@@ -12,6 +12,12 @@ var _m3 = require("./m3.js");
 
 var m3 = _interopRequireWildcard(_m3);
 
+var _jquery = require("jquery");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 /*console.log(m1);
@@ -24,3 +30,11 @@ m1.teach(); //入口文件
 
 m2.findJob();
 m3.default.teach();
+
+//修改背景颜色
+
+// $('body').css('background','red');
+(0, _jquery2.default)(window).on('load', function () {
+    // your code goes here
+    (0, _jquery2.default)('body').css('background', 'pink');
+});

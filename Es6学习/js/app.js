@@ -13,4 +13,13 @@ m1.teach();
 m2.findJob();
 m3.default.teach();
 
+//修改背景颜色
+import $ from 'jquery';
+// $('body').css('background','red');
+$(window).on('load', function() {
+    // your code goes here
+    $('body').css('background', 'pink');
+});
+
+
 
