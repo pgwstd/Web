@@ -51,8 +51,24 @@
              // console.log(x);
              x.call();
              x.photo();
-             x.playGame();
-         };*/
+             x.playGame();*/
+            class Phone {
+                get price(){
+                    console.log("价格属性被读取了");
+                    return 'love';
+                }
+
+                set price(newVal){
+                    console.log("价格属性被修改了");
+                }
+                call() {
+                    console.log("我可以打电话");
+                }
+            }
+            let s = new Phone();
+            // console.log(s.price);
+            s.price = 'free';
+         };
 
 
     </script>
