@@ -1,8 +1,8 @@
 //统一暴露
 let school = '玉林师范学院';
 
-function teach(){
-    console.log("我在学习编程");
+function findJob(){
+    console.log("我在找工作");
 }
 
-export {school, teach};
+export {school, findJob};
