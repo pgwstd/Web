@@ -9,7 +9,7 @@
               console.log(Object.is(NaN, NaN));
               console.log(NaN === NaN);*/
 
-            const config = {
+        /*    const config = {
                 host: 'localhost',
                 port: 3306,
                 name: 'root',
@@ -23,8 +23,17 @@
                 name: 'admin',
                 pass: 'admin'
             }
-            console.log(Object.assign(config, config2));
+            console.log(Object.assign(config, config2));*/
 
+            const school = {
+                name: '北海'
+            }
+
+            const citties = {
+                port: ['123','asd','asdwqe']
+            }
+            Object.setPrototypeOf(school, citties);
+            console.log(school);
         };
     </script>
 </head>
