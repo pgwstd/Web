@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Es8</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            /*  async function test(){
+                return 'hello world';
+              }
+              const result = test();
+              console.log(result);*/
+
+            const p = new Promise((resolve, reject) => {
+                // resolve('success');
+                reject('error');
+            });
+
+            async function test() {
+                /*let result = await p;
+                console.log(result);*/
+                try {
+                    let result = await p;
+                    console.log(result);
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+
+            test();
+
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
