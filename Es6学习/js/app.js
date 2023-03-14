@@ -17,7 +17,6 @@ m3.default.teach();
 import $ from 'jquery';
 // $('body').css('background','red');
 $(window).on('load', function() {
-    // your code goes here
     $('body').css('background', 'pink');
 });
 
