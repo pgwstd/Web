@@ -5,11 +5,11 @@
     <title>Es8</title>
     <script type="text/javascript">
         window.onload = function () {
-            /*  async function test(){
+         /*   /!*  async function test(){
                 return 'hello world';
               }
               const result = test();
-              console.log(result);*/
+              console.log(result);*!/
 
             const p = new Promise((resolve, reject) => {
                 // resolve('success');
@@ -17,8 +17,8 @@
             });
 
             async function test() {
-                /*let result = await p;
-                console.log(result);*/
+                /!*let result = await p;
+                console.log(result);*!/
                 try {
                     let result = await p;
                     console.log(result);
@@ -27,8 +27,19 @@
                 }
             }
 
-            test();
+            test();*/
 
+
+            const school = {
+                name: 'imooc',
+                getName() {
+                    return this.name;
+                }
+            };
+            console.log(Object.keys(school));
+            console.log(Object.values(school));
+            const m = new Map(Object.entries(school));
+            console.log(m.get('name'));
         }
 
     </script>
