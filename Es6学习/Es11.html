@@ -51,7 +51,7 @@
               const result = Promise.all([p1, p2]);
               console.log(result);*/
 
-            function main(config) {
+          /*  function main(config) {
                 // const dbHost = config.db.host;
                 const dbHost = config?.db?.host;//非空调用
                 console.log(dbHost);
@@ -66,7 +66,23 @@
                     host: '192.168.1.200',
                     username: 'admin'
                 }
-            })
+            })*/
+
+          /*  let bigint = 1234567890123456789012345678901234567890n;
+            console.log(bigint);
+            console.log(typeof bigint);
+            let n = 123;
+            console.log(BigInt(n));*/
+
+            let max = Number.MAX_SAFE_INTEGER;
+            console.log(max);
+            console.log(max + 1);
+            console.log(max + 2);
+
+            console.log(BigInt(max));
+            console.log(BigInt(max) + 1n);
+            console.log(BigInt(max) + 2n);
+
 
         }
     </script>
