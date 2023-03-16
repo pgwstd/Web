@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Es11</title>
+  <script type="text/javascript">
+    window.onload = function (){
+
+      class  Person {
+        name;
+        #age;
+        constructor(name, age) {
+          this.name = name;
+          this.#age = age;
+        }
+
+        getAge() {
+          return this.#age;
+        }
+
+        intro(){
+          console.log(`我是${this.name}, 我今年${this.#age}岁了`);
+        }
+
+}
+
+        const p = new Person('玉兔', 18);
+        /*console.log(p.name);
+        console.log(p.getAge());*/
+        p.intro();
+
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
