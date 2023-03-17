@@ -18,7 +18,7 @@
                 //1.创建XMLHttpRequest对象
                 const xhr = new XMLHttpRequest();
                 //2.设置请求参数
-                xhr.open('GET', 'http://127.0.0.1:8000/server');
+                xhr.open('GET', 'http://127.0.0.1:8000/server?name=张三&age=18');
                 //3.设置回调函数
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4) {   //请求成功的时候
