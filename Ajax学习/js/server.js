@@ -7,6 +7,11 @@ app.get('/server', (req, res) => {
     res.send('Hello Ajax GET');// 响应数据
 });
 
+app.get('json-server', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');// 设置响应头，允许跨域
+    res.send('Hello Ajax GET');// 响应数据
+});
+
 app.post('/server', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');// 设置响应头，允许跨域
     res.send('Hello Ajax POST');// 响应数据
