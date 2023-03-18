@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Timeout</title>
-  <script type="text/javascript">
-    window.onload = function (){
-      const btns = document.querySelectorAll('button');
-      let x = null;
-      btns[0].onclick = function (){
-        x = new XMLHttpRequest();
-        x.open('GET', 'http://127.0.0.1:8000/delay', true);
-        x.send();
-      };
+    <script type="text/javascript">
+        window.onload = function () {
+            const btns = document.querySelectorAll('button');
+            let x = null;
+            //标识变量
+            let isSending = false;//是否正在发送AJAX请求，默认给没有
+            btns[0].onclick = function () {
+                if (isSending) x.abort();//如果正在发送就把他取消该请求
+                x = new XMLHttpRequest();
+                isSending = true;
+                x.open('GET', 'http://127.0.0.1:8000/delay', true);
+                x.send();
+                x.onreadystatechange = function () {
+                    if (x.readyState === 4) {
+                        isSending = false;
+                    }
+                }
+            };
 
-      btns[1].onclick = function (){
-        x.abort();
-      }
-    };
-  </script>
+            btns[1].onclick = function () {
+                x.abort();
+            }
+        };
+    </script>
 </head>
 <body>
 <button>点击发送</button>
