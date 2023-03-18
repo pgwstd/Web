@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>JSON</title>
-  <style>
-    #result {
-      width: 200px;
-      height: 100px;
-      border: 1px solid #d92727;
-    }
-  </style>
-  <script type="text/javascript">
-    window.onload = function () {
-        window.onkeydown = function (){
-          const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'http://localhost:8000/json-server', true);
-            xhr.send();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    const result = document.getElementById('result');
-                    const data = JSON.parse(xhr.responseText);
-                    result.innerHTML = data.name + ' ' + data.age;
-                }
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #d92727;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            const result = document.getElementById("result");
+            window.onkeydown = function () {
+                const xhr = new XMLHttpRequest();
+                xhr.responseType = 'json';
+                xhr.open('GET', 'http://127.0.0.1:8000/json-server', true);
+                xhr.send();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        /*  console.log(xhr.response);
+                          result.innerHTML = xhr.response;*/
+                        /*   let data = JSON.parse(xhr.response);
+                           console.log(data);
+                           result.innerHTML = data.name;*/
+
+                        console.log(xhr.response);
+                        result.innerHTML = xhr.response.name;
+                    }
+                };
             };
         };
-    };
     </script>
 </head>
 <body>
