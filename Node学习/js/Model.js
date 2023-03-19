@@ -1,6 +1,6 @@
 // let md = require("./Test");
 let math = require("./Math");
-const {mul} = require("./Math");
+// const {mul} = require("./Math");
 
 /*
 console.log(md.x);
