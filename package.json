@@ -1,7 +1,7 @@
 {
   "name": "webgithub",
   "version": "1.0.0",
-  "description": "- 👋 Hi, I’m @pgwstr - 👀 I’m interested in ... - 🌱 I’m currently learning ... - 💞️ I’m looking to collaborate on ... - 📫 How to reach me ...",
+  "description": "- 👋 Hi, I’m @pgwstd - 👀 I’m interested in ... - 🌱 I’m currently learning ... - 💞️ I’m looking to collaborate on ... - 📫 How to reach me ...",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
