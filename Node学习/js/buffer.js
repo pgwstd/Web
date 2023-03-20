@@ -1,4 +1,4 @@
-const  str = "你好";
+const  str = "Hello world";
 
 let buf = Buffer.from(str, 'utf-8');
 
