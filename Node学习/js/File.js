@@ -33,12 +33,27 @@ fs.open("test2.txt", "w", function (err, fd) {
 });*/
 
 
-fs.writeFile("test3.txt", "这是我的普通写入", {flag: "a"}, function (err) {
+/*fs.writeFile("test3.txt", "这是我的普通写入", {flag: "a"}, function (err) {
     if (!err) {
         console.log("写入成功了");
     } else {
         console.log(err);
     }
+});*/
+
+let ws = fs.createWriteStream("test4.txt",{flags:"w"});
+
+//可以通过监听流的open和close事件来监听流的打开和关闭
+ws.once("open",() => {
+    console.log("打开成功了");
 });
 
+ws.once("close",() => {
+    console.log("关闭成功了");
+});
+
+ws.write("通过可写流进行写入");
+
+//关闭流
+ws.end();
 
