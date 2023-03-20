@@ -13,6 +13,7 @@ fs.writeSync(fd, "今天天气真不错");
 fs.closeSync(fd);*/
 
 
+/*
 fs.open("test2.txt", "w", function (err, fd) {
     if (!err) {
         fs.write(fd, "今天出去玩", function (err) {
@@ -29,4 +30,15 @@ fs.open("test2.txt", "w", function (err, fd) {
     } else {
         console.log(err);
     }
+});*/
+
+
+fs.writeFile("test3.txt", "这是我的普通写入", {flag: "a"}, function (err) {
+    if (!err) {
+        console.log("写入成功了");
+    } else {
+        console.log(err);
+    }
 });
+
+
