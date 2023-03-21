@@ -15,17 +15,17 @@
             setTimeout(() => {
               let n = rand(1, 100);
               if (n <= 30){
-                resolve();
+                resolve(n);
               }else{
-                reject();
+                reject(n);
               }
             },2000);
           });
 
-          p.then(() => {
-            alert('你中奖了');
-          }, () => {
-            alert('你没有中奖');
+          p.then((value) => {
+            alert('你中奖了' + value);
+          }, (reason) => {
+            alert('你没有中奖' + reason);
           });
 
       });
