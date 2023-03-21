@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise初体验</title>
+  <script type="text/javascript">
+    window.onload = function (){
+      //定义生成函数的随机数
+      function rand(m, n){
+        return Math.ceil(Math.random() * (n - m + 1)) + m - 1;
+      }
+      const btn = document.querySelector('#btn');
+      btn.addEventListener('click', () => {
+          const p = new Promise((resolve,reject) => {
+            setTimeout(() => {
+              let n = rand(1, 100);
+              if (n <= 30){
+                resolve();
+              }else{
+                reject();
+              }
+            },2000);
+          });
+
+          p.then(() => {
+            alert('你中奖了');
+          }, () => {
+            alert('你没有中奖');
+          });
+
+      });
+
+    };
+  </script>
+</head>
+<body>
+<div class="container">
+  <h2 class="page-header">Promise初体验</h2>
+  <button class="btn-primary" id="btn">点击抽奖</button>
+</div>
+</body>
+</html>
