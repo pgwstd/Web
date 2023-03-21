@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise API</title>
+  <script type="text/javascript">
+    window.onload = function (){
+      const p = new Promise((resolve, reject) => {
+          // console.log(111);
+        reject('err');
+      });
+      // console.log(222);  //这两者是同步调用的
+      p.catch(reason => {
+        console.log(reason);
+      });
+    };
+  </script>
+</head>
+<body>
+
+</body>
+</html>
