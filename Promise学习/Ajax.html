@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise 封装Ajax</title>
+  <script type="text/javascript">
+    window.onload = function (){
+      let btn = document.querySelector('#btn');
+      btn.addEventListener('click', () => {
+        const p = new Promise((resolve, reject) => {
+          //创建对象
+          const xhr = new XMLHttpRequest();
+          //初始化
+          xhr.open('GET', 'https://api.apiopen.top/getJoke');
+          //发送
+          xhr.send();
+          //处理
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(xhr.status);
+              } else {
+                reject(xhr.status);
+              }
+            }
+          };
+
+        });
+        p.then(value => {
+          console.log(value);
+        }, reason => {
+          console.warn(reason);
+        });
+
+      });
+    };
+  </script>
+</head>
+<body>
+<h2 class="page-header">Promise 封装Ajax</h2>
+<button class="btn-primary" id="btn">点击发送</button>
+</body>
+</html>
