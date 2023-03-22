@@ -43,6 +43,7 @@ function Promise(executor) {
 }
 
 Promise.prototype.then = function (onResolved, onRejected) {
+    const self = this;
     return new Promise((resolve, reject) => {
         //回调的执行
         if (this.PromiseState === 'fulfilled') {
@@ -69,8 +70,40 @@ Promise.prototype.then = function (onResolved, onRejected) {
         if (this.PromiseState === 'pending') {
             //如果是异步任务，还没有执行就先保存回调函数
             this.callbacks.push({
-                onResolved: onResolved,
-                onRejected: onRejected
+                onResolved: function () {
+                    try {
+                        //执行回调函数
+                        let result = onResolved(self.PromiseResult);
+                        //判断
+                        if (result instanceof Promise) {
+                            result.then(v => {
+                                resolve(v);
+                            }, r => {
+                                reject(r);
+                            });
+                        } else {
+                            resolve(result);
+                        }
+                    }catch (e){
+                        reject(e);
+                    }
+                },
+                onRejected: function () {
+                    try {
+                        let result = onRejected(self.PromiseResult);
+                        if (result instanceof Promise) {
+                            result.then(v => {
+                                resolve(v);
+                            }, r => {
+                                reject(r);
+                            });
+                        } else {
+                            resolve(result);
+                        }
+                    }catch (e){
+                        reject(e);
+                    }
+                }
             })
         }
     });
