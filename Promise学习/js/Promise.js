@@ -3,6 +3,8 @@ function Promise(executor) {
     //添加属性
     this.PromiseState = 'pending';
     this.PromiseResult = null;
+    //定义回调函数
+    this.callback = {};
     const _this = this;
 
     //resolve函数
@@ -13,6 +15,10 @@ function Promise(executor) {
         _this.PromiseState = 'fulfilled';
         //2.设置对象结果值(promiseResult)
         _this.PromiseResult = data;
+        //调用成功的回调函数
+        if (_this.callback.onResolved){
+            _this.callback.onResolved(data);
+        }
     }
 
     //reject函数
@@ -23,6 +29,10 @@ function Promise(executor) {
         _this.PromiseState = 'rejected';
         //2.设置对象结果值(promiseResult)
         _this.PromiseResult = data;
+        //调用回调函数
+        if (_this.callback.onResolved){
+            _this.callback.onResolved(data);
+        }
     }
 
     try {
@@ -39,5 +49,13 @@ Promise.prototype.then = function (onResolved, onReject) {
     }
     if (this.PromiseState === 'rejected'){
         onReject(this.PromiseResult);
+    }
+    //判断pending状态
+    if (this.PromiseState === 'pending'){
+        //如果是异步任务，还没有执行就先保存回调函数
+        this.callback = {
+            onResolved,
+            onReject
+        }
     }
 }
