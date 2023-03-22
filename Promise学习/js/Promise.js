@@ -16,9 +16,9 @@ function Promise(executor) {
         //2.设置对象结果值(promiseResult)
         _this.PromiseResult = data;
         //调用成功的回调函数
-      _this.callbacks.forEach(item => {
-         item.onResolved(data);
-      });
+        _this.callbacks.forEach(item => {
+            item.onResolved(data);
+        });
     }
 
     //reject函数
@@ -31,7 +31,7 @@ function Promise(executor) {
         _this.PromiseResult = data;
         //调用成功的回调函数
         _this.callbacks.forEach(item => {
-            item.onReject(data);
+            item.onRejected(data);
         });
     }
 
@@ -42,20 +42,36 @@ function Promise(executor) {
     }
 }
 
-Promise.prototype.then = function (onResolved, onReject) {
-    //回调的执行
-    if (this.PromiseState === 'fulfilled') {
-        onResolved(this.PromiseResult);
-    }
-    if (this.PromiseState === 'rejected') {
-        onReject(this.PromiseResult);
-    }
-    //判断pending状态
-    if (this.PromiseState === 'pending') {
-        //如果是异步任务，还没有执行就先保存回调函数
-        this.callbacks.push({
-            onResolved: onResolved,
-            onReject: onReject
-        })
-    }
+Promise.prototype.then = function (onResolved, onRejected) {
+    return new Promise((resolve, reject) => {
+        //回调的执行
+        if (this.PromiseState === 'fulfilled') {
+            try {
+                let result = onResolved(this.PromiseResult);
+                if (result instanceof Promise) {
+                    result.then(v => {
+                        resolve(v);
+                    }, r => {
+                        reject(r);
+                    });
+                } else {
+                    resolve(result);
+                }
+            } catch (e) {
+                reject(e);
+            }
+
+        }
+        if (this.PromiseState === 'rejected') {
+            onRejected(this.PromiseResult);
+        }
+        //判断pending状态
+        if (this.PromiseState === 'pending') {
+            //如果是异步任务，还没有执行就先保存回调函数
+            this.callbacks.push({
+                onResolved: onResolved,
+                onRejected: onRejected
+            })
+        }
+    });
 }
