@@ -48,7 +48,7 @@ Promise.prototype.then = function (onResolved, onRejected) {
        //封装函数
         function callback(type){
             try {
-                let result = type(this.PromiseResult);
+                let result = type(self.PromiseResult);
                 if (result instanceof Promise) {
                     result.then(v => {
                         resolve(v);
@@ -82,4 +82,9 @@ Promise.prototype.then = function (onResolved, onRejected) {
             })
         }
     });
+}
+
+Promise.prototype.catch = function (onRejected){
+    return this.then(undefined, onRejected);
+
 }
