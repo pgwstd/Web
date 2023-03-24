@@ -100,7 +100,7 @@ Promise.prototype.catch = function (onRejected) {
 }
 
 //添加resolve方法
-Promise.res = function (value) {
+Promise.resolve = function (value) {
     return new Promise((resolve, reject) => {
         if (value instanceof Promise) {
             value.then(v => {
@@ -113,3 +113,11 @@ Promise.res = function (value) {
         }
     });
 }
+
+//添加reject方法
+Promise.reject = function (reason) {
+    return new Promise((resolve, reject) => {
+       reject(reason);
+    });
+}
+
