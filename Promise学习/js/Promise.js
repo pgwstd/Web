@@ -44,14 +44,18 @@ function Promise(executor) {
 
 Promise.prototype.then = function (onResolved, onRejected) {
     const self = this;
-    if (typeof onRejected !== 'function'){
+    if (typeof onRejected !== 'function') {
         onRejected = reason => {
             throw reason;
         }
     }
+
+    if (typeof onResolved !== 'function') {
+        onResolved = value => value;
+    }
     return new Promise((resolve, reject) => {
-       //封装函数
-        function callback(type){
+        //封装函数
+        function callback(type) {
             try {
                 let result = type(self.PromiseResult);
                 if (result instanceof Promise) {
@@ -67,6 +71,7 @@ Promise.prototype.then = function (onResolved, onRejected) {
                 reject(e);
             }
         }
+
         //回调的执行
         if (this.PromiseState === 'fulfilled') {
             callback(onResolved);
@@ -89,7 +94,22 @@ Promise.prototype.then = function (onResolved, onRejected) {
     });
 }
 
-Promise.prototype.catch = function (onRejected){
+Promise.prototype.catch = function (onRejected) {
     return this.then(undefined, onRejected);
 
+}
+
+//添加resolve方法
+Promise.res = function (value) {
+    return new Promise((resolve, reject) => {
+        if (value instanceof Promise) {
+            value.then(v => {
+                resolve(v);
+            }, r => {
+                reject(r);
+            });
+        } else {
+            resolve(value);
+        }
+    });
 }
