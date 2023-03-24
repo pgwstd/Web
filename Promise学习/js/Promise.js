@@ -16,8 +16,10 @@ function Promise(executor) {
         //2.设置对象结果值(promiseResult)
         _this.PromiseResult = data;
         //调用成功的回调函数
-        _this.callbacks.forEach(item => {
-            item.onResolved(data);
+        setTimeout(() => {
+            _this.callbacks.forEach(item => {
+                item.onResolved(data);
+            });
         });
     }
 
@@ -30,8 +32,10 @@ function Promise(executor) {
         //2.设置对象结果值(promiseResult)
         _this.PromiseResult = data;
         //调用成功的回调函数
-        _this.callbacks.forEach(item => {
-            item.onRejected(data);
+        setTimeout(() => {
+            _this.callbacks.forEach(item => {
+                item.onRejected(data);
+            });
         });
     }
 
@@ -74,10 +78,14 @@ Promise.prototype.then = function (onResolved, onRejected) {
 
         //回调的执行
         if (this.PromiseState === 'fulfilled') {
-            callback(onResolved);
+            setTimeout(() => {
+                callback(onResolved);
+            });
         }
         if (this.PromiseState === 'rejected') {
-            callback(onRejected);
+            setTimeout(() => {
+                callback(onRejected);
+            });
         }
         //判断pending状态
         if (this.PromiseState === 'pending') {
@@ -145,7 +153,7 @@ Promise.all = function (promise) {
     });
 }
 
-
+//添加race方法
 Promise.race = function (promise) {
     return new Promise((resolve, reject) => {
         for (let i = 0; i < promise.length; i++) {
@@ -156,5 +164,5 @@ Promise.race = function (promise) {
             })
         }
     });
-
 }
+
