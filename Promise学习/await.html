@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>await函数</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            async function main() {
+                // return 12;
+                let p = new Promise((resolve, reject) => {
+                    // resolve('OK');
+                    reject('ERROR');
+                    // throw 'no';
+                });
+                try {
+                    let res = await p;
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+
+            main();
+
+
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>
