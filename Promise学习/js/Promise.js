@@ -121,3 +121,28 @@ Promise.reject = function (reason) {
     });
 }
 
+//添加all方法
+Promise.all = function (promise){
+    return new Promise((resolve, reject) => {
+       //声明变量
+        let count = 0;
+        //存放的数组
+        let arr = [];
+        //遍历
+        for (let i = 0; i < promise.length;i++){
+           promise[i].then(v =>{
+               //看它的状态是不是都是成功的
+               count++;
+               //将当前的成功的内容放到数组中
+               arr[i] = v;
+               if (count === promise.length){
+                   resolve(arr);
+               }
+           },r => {
+               reject(r);
+           });
+       }
+    });
+}
+
+
