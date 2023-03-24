@@ -44,6 +44,11 @@ function Promise(executor) {
 
 Promise.prototype.then = function (onResolved, onRejected) {
     const self = this;
+    if (typeof onRejected !== 'function'){
+        onRejected = reason => {
+            throw reason;
+        }
+    }
     return new Promise((resolve, reject) => {
        //封装函数
         function callback(type){
