@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <title>Test</title>
   <script src="../Vue学习/js/vue.js"></script>
-  <script type="text/javascript">
-      //关闭开发版本提示
-      Vue.config.productionTip = false;
-
-  </script>
 </head>
 <body>
+<div id="root">
+  <h2>你好, {{name}}{{age}}</h2>
+</div>
+<script type="text/javascript">
+    //关闭开发版本提示
+    Vue.config.productionTip = false;
+    //创建vue实例
+    new Vue({
+      el:'#root',  //为什么容器服务
+      data:{
+        name:'张三',
+        age:18
+      }
+    });
 
+</script>
 </body>
 </html>
