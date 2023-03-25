@@ -2,25 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>单双向数据绑定</title>
+    <title>el和data的两种写法</title>
   <script src="../Vue学习/js/vue.js"></script>
 </head>
 <body>
 <div id="root">
-  单向数据绑定:<label>
-  <input type="text" v-bind:value="name">
-</label>
-<br>
-  双向数据绑定:<label>
-  <input type="text" v-model="name">
-</label>
+  <h2>你好,{{name}}</h2>
 </div>
 <script type="text/javascript">
   Vue.config.productionTip = false;
   new Vue({
     el:'#root',
     data:{
-      name:'张三'
+      name:'北海'
     }
   });
 </script>
