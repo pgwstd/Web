@@ -11,12 +11,21 @@
 </div>
 <script type="text/javascript">
   Vue.config.productionTip = false;
-  new Vue({
+ const v = new Vue({
     el:'#root',
-    data:{
+ /*   data:{
       name:'北海'
-    }
+    }*/
+     data:function (){
+         return{
+             name:'北海'
+         }
+     }
   });
+/* setTimeout(() => {
+  v.$mount('#root');
+ },1000);*/
+
 </script>
 </body>
 </html>
