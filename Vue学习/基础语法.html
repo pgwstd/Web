@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础语法</title>
+  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  {{ name }}
+  <p v-text="name">123</p>
+  <p v-html="name">123</p>
+</div>
+<script type="text/javascript">
+  //关闭开发版提示
+  Vue.config.productionTip = false;
+  new Vue({
+    el:'#app',
+    data:{
+      //name:'小红'
+      name:"<a href='https://www.baidu.com'>百度</a>"
+    }
+  });
+</script>
+</body>
+</html>
