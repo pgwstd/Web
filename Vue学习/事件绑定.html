@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <label>
+    <input type="button" value="v-on指令" v-on:click="doIt">
+    <input type="button" value="v-on简写" @click="doIt2">
+    <input type="button" value="双击事件" @dbclick="doIt3">
+  </label>
+</div>
+
+<script type="text/javascript">
+  Vue.config.productionTip = false;
+  new Vue({
+    el:'#app',
+    data:{
+      name:'你好 Vue'
+    },
+    methods:{
+      doIt(){
+        alert('v-on绑定')
+      },
+      doIt2(){
+        alert('简写')
+      },
+      doIt3(){
+        alert('双击事件')
+      }
+    }
+  });
+</script>
+</body>
+</html>
