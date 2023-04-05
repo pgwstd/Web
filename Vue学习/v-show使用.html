@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-show使用</title>
+  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <button type="button" value="点击转换" @click="isShow">点击转换</button>
+  <p v-show="show">你好</p>
+  <p v-if="show">我在北海</p>
+</div>
+
+<script type="text/javascript">
+  Vue.config.productionTip = false;
+   new Vue({
+    el: '#app',
+    data: {
+      show: false
+    },
+     methods:{
+      isShow(){
+        this.show = !this.show;
+      }
+     }
+  });
+</script>
+</body>
+</html>
