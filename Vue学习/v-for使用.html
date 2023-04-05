@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for使用</title>
+  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in list">
+        {{ item.name }}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="(item, index) in list">
+        {{ index }} - {{ item.name }}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="(value, key, index) in list">
+        {{ index }} - {{ key }}: {{ value }}
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+  new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!',
+      list: [
+        {id: 1, name: 'iPhone 7', price: 6188, count: 1},
+        {id: 2, name: 'iPad Pro', price: 5888, count: 1},
+        {id: 3, name: 'MacBook Pro', price: 21488, count: 1}
+      ]
+    }
+  })
+</script>
+</body>
+</html>
