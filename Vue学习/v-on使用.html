@@ -7,17 +7,23 @@
 </head>
 <body>
 <div id="app">
-
+    <input type="button" value="点击" @click="doIt(1,2)" />
+    <input type="text" @keyup.enter="sayHi" />
 </div>
 <script type="text/javascript">
   Vue.config.productionTip = false;
   new Vue({
     el:'#app',
     data:{
-
+        name:'张三',
     },
     methods:{
-
+        doIt(p1,p2){
+            console.log(p1,p2);
+        },
+        sayHi(){
+            alert('hi')
+        }
     }
   });
 </script>
