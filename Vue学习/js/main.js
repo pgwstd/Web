@@ -56,7 +56,9 @@ var app = new Vue({
           that.musicList = response.data.result.songs;
           console.log(response.data.result.songs);
         },
-        function(err) {}
+        function(err) {
+            console.log(err);
+        }
       );
     },
     // 歌曲播放
@@ -70,7 +72,9 @@ var app = new Vue({
           // console.log(response.data.data[0].url);
           that.musicUrl = response.data.data[0].url;
         },
-        function(err) {}
+        function(err) {
+          console.log(err)
+        }
       );
 
       // 歌曲详情获取
@@ -80,7 +84,9 @@ var app = new Vue({
           // console.log(response.data.songs[0].al.picUrl);
           that.musicCover = response.data.songs[0].al.picUrl;
         },
-        function(err) {}
+        function(err) {
+            console.log(err)
+        }
       );
 
       // 歌曲评论获取
@@ -90,7 +96,9 @@ var app = new Vue({
           // console.log(response.data.hotComments);
           that.hotComments = response.data.hotComments;
         },
-        function(err) {}
+        function(err) {
+            console.log(err)
+        }
       );
     },
     // 歌曲播放
@@ -113,7 +121,9 @@ var app = new Vue({
           that.isShow = true;
           that.mvUrl = response.data.data.url;
         },
-        function(err) {}
+        function(err) {
+            console.log(err)
+        }
       );
     },
     // 隐藏

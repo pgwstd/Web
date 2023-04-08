@@ -275,7 +275,7 @@ dd {
 /* 是否正在播放 */
 .player_con.playing .disc,
 .player_con.playing .cover {
-  animation-play-state: running;
+  animation-play-state: running;  /* 播放状态 */
 }
 
 .play_bar {
