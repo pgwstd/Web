@@ -21,7 +21,7 @@
             <div class='song_wrapper'>
                 <ul class="song_list">
                     <li v-for="item in musicList">
-                        <a href="javascript:;" @click="playMusic(item.id)"></a>
+                        <a href="javascript:" @click="playMusic(item.id)"></a>
                         <b>{{ item.name }}</b>
                         <span v-if="item.mvid!=0" @click="playMV(item.mvid)"><i></i></span>
                     </li>
