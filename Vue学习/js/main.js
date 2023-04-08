@@ -26,6 +26,7 @@
     请求参数:id(mvid,为0表示没有mv)
     响应内容:mv的地址
 */
+Vue.config.productionTip = false;
 var app = new Vue({
   el: "#player",
   data: {
