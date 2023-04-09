@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>姓名案例</title>
+    <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>姓:<input type="text" v-model="firstName"></p>
+    <p>名:<input type="text" v-model="lastName"></p>
+<!--    firstName.slice(0,2)此方法不好，不方便代码阅读-->
+<!--    <p>全名:{{firstName.slice(0,2)}}-{{lastName}}</p>-->
+    <p>全名:{{twoName()}}</p>
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip = false;
+    new Vue({
+        el: '#app',
+        data: {
+            firstName: '张',
+            lastName: '三'
+        },
+        methods: {
+            //保留姓的前两位,名前两位方法
+            twoName(){
+               return this.firstName.slice(0,2) + '-' + this.lastName.slice(0,2)
+            }
+        }
+    });
+</script>
+</body>
+</html>
