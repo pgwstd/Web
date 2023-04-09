@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>姓名案例</title>
+    <title>计算属性</title>
     <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
 </head>
 <body>
@@ -34,7 +34,7 @@
               }
           },*/
         //计算属性
-        computed: {
+    /*    computed: {
             twoName: {
                 get() {
                     console.log('读取到了')
@@ -46,6 +46,12 @@
                     this.firstName = arr[0]
                     this.lastName = arr[1]
                 }
+            }
+        }*/
+        computed: {
+            twoName(){
+                console.log('读取到了')
+                return this.firstName.slice(0, 2) + '-' + this.lastName.slice(0, 2)
             }
         }
     });
