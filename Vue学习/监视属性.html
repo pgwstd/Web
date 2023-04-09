@@ -8,6 +8,7 @@
 <body>
 <div id="app">
     <p>今天天气{{info}}</p>
+<!--    <input type="button" value="转换" @click="conversion">-->
     <input type="button" value="转换" @click="conversion">
 </div>
 <script type="text/javascript">
@@ -25,6 +26,13 @@
         methods: {
             conversion() {
                 this.isHot = !this.isHot
+            }
+        },
+        watch:{
+            isHot:{
+                handle(){
+                    this.isHot = !this.isHot
+                }
             }
         }
     });
