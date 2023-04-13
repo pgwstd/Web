@@ -29,11 +29,15 @@
             }
         },
         watch:{
-            isHot:{
+          /*  isHot:{
                 immediate:true,
                 handle(){
                     this.isHot = !this.isHot
                 }
+            }*/
+            //简写
+            isHot(){
+                 this.isHot = !this.isHot
             }
         }
     });
