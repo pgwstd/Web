@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if使用</title>
+  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h2 v-if="true">{{name}}</h2>
+  <h2 v-if="false">{{name}}</h2>
+</div>
+<script type="text/javascript">
+  Vue.config.productionTip = false
+  new Vue({
+    el:'#app',
+    data:{
+      name:'张三'
+    }
+  })
+</script>
+</body>
+</html>
