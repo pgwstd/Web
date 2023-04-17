@@ -8,9 +8,11 @@
 <body>
 <div id="app">
   <h2>人员列表</h2>
+    <button @click.once="add">点击添加</button>
   <ul>
     <li v-for="item in persons" :key="item.id">
      {{item.id}} {{item.name}}-{{item.age}}
+        <input type="text"/>
     </li>
   </ul>
 </div>
@@ -24,7 +26,13 @@
         {id:'002', name:'李四', age:15},
         {id:'003', name:'王五', age:16},
       ]
-    }
+    },
+      methods:{
+        add(){
+            const p = {id:'004', name:'大圣', age:116}
+            this.persons.unshift(p)
+        }
+      }
   })
 </script>
 </body>
