@@ -18,40 +18,40 @@
         </li>
     </ul>
 </div>
-<script type="text/javascript">/**/
-    Vue.config.productionTip = false
-    new Vue({
-        el: '#app',
-        data: {
-            key:'',
-            persons: [
-                {id: '001', name: '马冬梅', age: 18},
-                {id: '002', name: '周冬雨', age: 15},
-                {id: '003', name: '周杰伦', age: 16},
-                {id: '004', name: '温兆伦', age: 16},
-            ],
-            sortType:0  //0为原顺序
-        },
-        methods: {
-            add() {
-                const p = {id: '004', name: '大圣', age: 116}
-                this.persons.unshift(p)
-            }
-        },
-        computed:{
-            keypersons() {
-               const arr = this.persons.filter((p) => {
-                    return p.name.indexOf(this.key) !== -1
-                })
-                if (this.sortType){
-                    arr.sort((a,b)=>{
-                        return this.sortType === 1 ? b.age-a.age  : a.age-b.age
-                    })
-                }
-                return arr
-            }
+<script type="text/javascript">
+Vue.config.productionTip = false
+new Vue({
+    el: '#app',
+    data: {
+        key: '',
+        persons: [
+            {id: '001', name: '马冬梅', age: 18},
+            {id: '002', name: '周冬雨', age: 15},
+            {id: '003', name: '周杰伦', age: 16},
+            {id: '004', name: '温兆伦', age: 16},
+        ],
+        sortType: 0  //0为原顺序
+    },
+    methods: {
+        add() {
+            const p = {id: '004', name: '大圣', age: 116}
+            this.persons.unshift(p)
         }
-    })
+    },
+    computed: {
+        keypersons() {
+            const arr = this.persons.filter((p) => {
+                return p.name.indexOf(this.key) !== -1
+            })
+            if (this.sortType) {
+                arr.sort((a, b) => {
+                    return this.sortType === 1 ? b.age - a.age : a.age - b.age
+                })
+            }
+            return arr
+        }
+    }
+})
 </script>
 </body>
 </html>
