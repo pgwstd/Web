@@ -9,15 +9,10 @@
 <div id="app">
     <h2>人员列表</h2>
     <input type="text" value="请输入名字" v-model:value="key">
-    <button>年龄升序</button>
-    <button>年龄降序</button>
-    <button>原排序</button>
+    <button @click="sortType=2">年龄升序</button>
+    <button @click="sortType=1">年龄降序</button>
+    <button @click="sortType=0">原排序</button>
     <ul>
-<!--        如果keypersons不为空，就遍历keypersons，否则遍历persons-->
- <!--       <li v-for="item in keypersons.length>0?keypersons:persons" :key="item.id">
-            {{item.id}} {{item.name}}-{{item.age}}
-        </li>-->
-
         <li v-for="item in keypersons" :key="item.id">
             {{item.id}} {{item.name}}-{{item.age}}
         </li>
@@ -35,7 +30,7 @@
                 {id: '003', name: '周杰伦', age: 16},
                 {id: '004', name: '温兆伦', age: 16},
             ],
-
+            sortType:0  //0为原顺序
         },
         methods: {
             add() {
@@ -45,18 +40,17 @@
         },
         computed:{
             keypersons() {
-               return  this.persons.filter((p) => {
+               const arr = this.persons.filter((p) => {
                     return p.name.indexOf(this.key) !== -1
                 })
+                if (this.sortType){
+                    arr.sort((a,b)=>{
+                        return this.sortType === 1 ? b.age-a.age  : a.age-b.age
+                    })
+                }
+                return arr
             }
-        },
-    /*    watch:{
-            key(newValue){
-              this.keypersons = this.persons.filter((p) => {
-                    return p.name.indexOf(newValue) != -1
-                })
-            }
-        }*/
+        }
     })
 </script>
 </body>
