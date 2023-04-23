@@ -9,6 +9,11 @@
 <div id="app">
     <h2>{{name}}</h2>
     <h2>{{age}}</h2>
+    <h2>{{arr.a}}</h2>
+    <h2>{{arr.b}}</h2>
+    <ul>
+        <li v-for="item in arr "></li>
+    </ul>
 </div>
 <script type="text/javascript">
 
@@ -18,7 +23,11 @@
         el: '#app',
         data: {
             name: '李白',
-            age: 18
+            age: 18,
+            arr:{
+                a:a1,
+                b:b2
+            }
         }
     })
 </script>
