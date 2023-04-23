@@ -11,9 +11,11 @@
     <h2>{{age}}</h2>
     <h2>{{arr.a}}</h2>
     <h2>{{arr.b}}</h2>
-    <ul>
-        <li v-for="item in arr "></li>
-    </ul>
+<!--    <ul>
+        <li v-for="item in arr ">
+            {{item.a}}-&#45;&#45;{{item.b}}
+        </li>
+    </ul>-->
 </div>
 <script type="text/javascript">
 
@@ -25,8 +27,8 @@
             name: '李白',
             age: 18,
             arr:{
-                a:a1,
-                b:b2
+                a:'a1',
+                b:'b1'
             }
         }
     })
