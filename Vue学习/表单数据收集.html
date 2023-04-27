@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>表单数据收集</title>
-    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
 </head>
 <body>
+<div id="app">
 <form>
     <label for="acc">帐号:</label>
-    <input type="text" id="acc">
+    <input type="text" id="acc" v-model="account">
     <br/>
     <br/>
     <label for="pwd">密码:</label>
-    <input type="text" id="pwd">
+    <input type="text" id="pwd" v-model="password">
     <br/>
     <br/>
     性别:
-    男<input type="radio" name="sex">
-    女<input type="radio" name="sex">
+    男<input type="radio" name="sex" v-model="sex" value="male">
+    女<input type="radio" name="sex" v-model="sex" value="female">
     <br/>
     <br/>
     爱好:
-    篮球<input type="checkbox" name="hobby">
-    足球<input type="checkbox" name="hobby">
-    乒乓球<input type="checkbox" name="hobby">
+    篮球<input type="checkbox" name="hobby" value="basketball" v-model="hobby">
+    足球<input type="checkbox" name="hobby" value="football" v-model="hobby">
+    乒乓球<input type="checkbox" name="hobby" value="tabletennis" v-model="hobby">
     <br/>
     <br/>
   所在城市:
-    <select>
+    <select v-model="city">
+        <option value="">请选择城市</option>
         <option value="1">北京</option>
         <option value="2">上海</option>
         <option value="3">广州</option>
@@ -37,18 +39,30 @@
     <br/>
     <br/>
     其他信息:
-    <textarea></textarea>
+    <textarea v-model="other"></textarea>
     <br/>
     <br/>
-    <input type="checkbox" name="agree">
+    <input type="checkbox" name="agree" v-model="argee">
     阅读并接受<a href="#">用户协议</a>
     <br/>
     <br/>
     <input type="submit" value="提交">
 </form>
+</div>
 <script type="text/javascript">
     Vue.config.productionTip = false
-    new Vue({})
+  const vm = new Vue({
+        el:'#app',
+        data:{
+            account:'',
+            password:'',
+            sex:'male',
+            hobby:[],
+            city:'',
+            other:'',
+            argee:''
+        }
+    })
 </script>
 </body>
 </html>
