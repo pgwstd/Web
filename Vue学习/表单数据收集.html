@@ -6,11 +6,49 @@
     <script type="text/javascript" src="js/vue.js"></script>
 </head>
 <body>
+<form>
+    <label for="acc">帐号:</label>
+    <input type="text" id="acc">
+    <br/>
+    <br/>
+    <label for="pwd">密码:</label>
+    <input type="text" id="pwd">
+    <br/>
+    <br/>
+    性别:
+    男<input type="radio" name="sex">
+    女<input type="radio" name="sex">
+    <br/>
+    <br/>
+    爱好:
+    篮球<input type="checkbox" name="hobby">
+    足球<input type="checkbox" name="hobby">
+    乒乓球<input type="checkbox" name="hobby">
+    <br/>
+    <br/>
+  所在城市:
+    <select>
+        <option value="1">北京</option>
+        <option value="2">上海</option>
+        <option value="3">广州</option>
+        <option value="4">深圳</option>
+        <option value="5">广西</option>
+    </select>
+    <br/>
+    <br/>
+    其他信息:
+    <textarea></textarea>
+    <br/>
+    <br/>
+    <input type="checkbox" name="agree">
+    阅读并接受<a href="#">用户协议</a>
+    <br/>
+    <br/>
+    <input type="submit" value="提交">
+</form>
 <script type="text/javascript">
     Vue.config.productionTip = false
-    new Vue({
-
-    })
+    new Vue({})
 </script>
 </body>
 </html>
