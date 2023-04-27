@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="app">
-<form>
+<form @submit.prevent="subm">
     <label for="acc">帐号:</label>
     <input type="text" id="acc" v-model="account">
     <br/>
@@ -61,7 +61,13 @@
             city:'',
             other:'',
             argee:''
-        }
+        },
+      methods:{
+          subm(){
+              alert('提交成功')
+          }
+      }
+
     })
 </script>
 </body>
