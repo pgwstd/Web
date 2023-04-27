@@ -16,6 +16,10 @@
     <input type="text" id="pwd" v-model="password">
     <br/>
     <br/>
+    <label for="age">年龄:</label>
+    <input type="number" id="age" v-model.number="age">
+    <br/>
+    <br/>
     性别:
     男<input type="radio" name="sex" v-model="sex" value="male">
     女<input type="radio" name="sex" v-model="sex" value="female">
@@ -56,6 +60,7 @@
         data:{
             account:'',
             password:'',
+            age:'',
             sex:'male',
             hobby:[],
             city:'',
