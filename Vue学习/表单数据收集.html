@@ -7,71 +7,71 @@
 </head>
 <body>
 <div id="app">
-<form @submit.prevent="subm">
-    <label for="acc">帐号:</label>
-    <input type="text" id="acc" v-model.trim="account">
-    <br/>
-    <br/>
-    <label for="pwd">密码:</label>
-    <input type="text" id="pwd" v-model="password">
-    <br/>
-    <br/>
-    <label for="age">年龄:</label>
-    <input type="number" id="age" v-model.number="age">
-    <br/>
-    <br/>
-    性别:
-    男<input type="radio" name="sex" v-model="sex" value="male">
-    女<input type="radio" name="sex" v-model="sex" value="female">
-    <br/>
-    <br/>
-    爱好:
-    篮球<input type="checkbox" name="hobby" value="basketball" v-model="hobby">
-    足球<input type="checkbox" name="hobby" value="football" v-model="hobby">
-    乒乓球<input type="checkbox" name="hobby" value="tabletennis" v-model="hobby">
-    <br/>
-    <br/>
-  所在城市:
-    <select v-model="city">
-        <option value="">请选择城市</option>
-        <option value="1">北京</option>
-        <option value="2">上海</option>
-        <option value="3">广州</option>
-        <option value="4">深圳</option>
-        <option value="5">广西</option>
-    </select>
-    <br/>
-    <br/>
-    其他信息:
-    <textarea v-model.lazy="other"></textarea>
-    <br/>
-    <br/>
-    <input type="checkbox" name="agree" v-model="agree">
-    阅读并接受<a href="#">用户协议</a>
-    <br/>
-    <br/>
-    <input type="submit" value="提交">
-</form>
+    <form @submit.prevent="subm">
+        <label for="acc">帐号:</label>
+        <input type="text" id="acc" v-model.trim="account">
+        <br/>
+        <br/>
+        <label for="pwd">密码:</label>
+        <input type="text" id="pwd" v-model="password">
+        <br/>
+        <br/>
+        <label for="age">年龄:</label>
+        <input type="number" id="age" v-model.number="age">
+        <br/>
+        <br/>
+        性别:
+        男<input type="radio" name="sex" v-model="sex" value="male">
+        女<input type="radio" name="sex" v-model="sex" value="female">
+        <br/>
+        <br/>
+        爱好:
+        篮球<input type="checkbox" name="hobby" value="basketball" v-model="hobby">
+        足球<input type="checkbox" name="hobby" value="football" v-model="hobby">
+        乒乓球<input type="checkbox" name="hobby" value="tabletennis" v-model="hobby">
+        <br/>
+        <br/>
+        所在城市:
+        <select v-model="city">
+            <option value="">请选择城市</option>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">广州</option>
+            <option value="4">深圳</option>
+            <option value="5">广西</option>
+        </select>
+        <br/>
+        <br/>
+        其他信息:
+        <textarea v-model.lazy="other"></textarea>
+        <br/>
+        <br/>
+        <input type="checkbox" name="agree" v-model="agree">
+        阅读并接受<a href="#">用户协议</a>
+        <br/>
+        <br/>
+        <input type="submit" value="提交">
+    </form>
 </div>
 <script type="text/javascript">
     Vue.config.productionTip = false
-  const vm = new Vue({
-        el:'#app',
-        data:{
-            account:'',
-            password:'',
-            age:'',
-            sex:'male',
-            hobby:[],
-            city:'',
-            other:'',
-            agree:''
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            account: '',
+            password: '',
+            age: '',
+            sex: 'male',
+            hobby: [],
+            city: '',
+            other: '',
+            agree: ''
         },
-      methods:{
-          subm(){
-              alert('提交成功')
-          }
-      }
+        methods: {
+            subm() {
+                alert('提交成功')
+            }
+        }
 
     })
 </script>
