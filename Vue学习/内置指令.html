@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置指令</title>
+  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <p v-text="test"></p>
+
+</div>
+<script type="text/javascript">
+  Vue.config.productionTip = false;
+
+  new Vue({
+    el:'#app',
+    data:{
+      test:'hello world'
+    }
+  })
+
+</script>
+</body>
+</html>
