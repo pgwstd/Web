@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>内置指令</title>
-  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+    <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
 </head>
 <body>
 <div id="app">
-  <p v-text="test">2131</p>
-<p v-html="demo"></p>
+    <p v-text="test">2131</p>
+    <p v-html="demo"></p>
+    <p v-once>初始值为{{n}}</p>
+    <P>变化后的值为{{n}}</P>
+    <button @click="n++">+1</button>
 </div>
 <script type="text/javascript">
-  Vue.config.productionTip = false;
+    Vue.config.productionTip = false;
 
-  new Vue({
-    el:'#app',
-    data:{
-      test:'hello world',
-        demo:'<h3>123</h3>'
-    }
-  })
+    new Vue({
+        el: '#app',
+        data: {
+            test: 'hello world',
+            demo: '<h3>123</h3>',
+            n:1
+        }
+    })
 
 </script>
 </body>
