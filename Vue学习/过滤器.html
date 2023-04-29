@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h2>显示时间</h2>
+  <h2>{{fmttime}}</h2>
+</div>
+<script type="text/javascript">
+  Vue.config.productionTip = false;
+
+  new Vue({
+    el:'#app',
+    data:{
+        time: 1616161616161
+        },
+    computed:{
+      fmttime() {
+        return new Date(this.time).toLocaleString()
+      }
+    }
+  })
+</script>
+</body>
+</html>
