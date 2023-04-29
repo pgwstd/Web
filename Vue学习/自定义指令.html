@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+    <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <span v-text="message"></span>
+    <p v-once>初始值为{{n}}</p>
+    <P>变化后的值为{{n}}</P>
+    <p>放大十倍后的值为:<span v-big="n"></span></p>
+    <button @click="n++">+1</button>
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip = false;
+    var app = new Vue({
+        el: '#app',
+        data: {
+            n: 1,
+            message: 'Hello Vue!'
+        },
+        directives: {
+            big: function (el, binding) {
+                el.innerHTML = binding.value * 10;
+            }
+        }
+    })
+</script>
+</body>
+</html>
