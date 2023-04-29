@@ -8,7 +8,7 @@
 <body>
 <div id="app">
   <p v-text="test">2131</p>
-
+<p v-html="demo"></p>
 </div>
 <script type="text/javascript">
   Vue.config.productionTip = false;
@@ -16,7 +16,8 @@
   new Vue({
     el:'#app',
     data:{
-      test:'hello world'
+      test:'hello world',
+        demo:'<h3>123</h3>'
     }
   })
 
