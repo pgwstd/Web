@@ -11,7 +11,7 @@
     <p v-once>初始值为{{n}}</p>
     <P>变化后的值为{{n}}</P>
     <p>放大十倍后的值为:<span v-big="n"></span></p>
-    <p v-fbind:value="n"></p>
+    <input type="text" v-fbind:value="n"></input>
     <button @click="n++">+1</button>
 </div>
 <script type="text/javascript">
