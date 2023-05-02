@@ -11,6 +11,7 @@
     <p v-once>初始值为{{n}}</p>
     <P>变化后的值为{{n}}</P>
     <p>放大十倍后的值为:<span v-big="n"></span></p>
+    <p v-fbind:value="n"></p>
     <button @click="n++">+1</button>
 </div>
 <script type="text/javascript">
@@ -26,6 +27,12 @@
         directives: {
             big(el, binding) {
                 el.innerHTML = binding.value * 10;
+            },
+            fbind(el, binding){
+                el.value = binding.value;
+                el.oninput = function(){
+                    app.n = el.value;
+                }
             }
         }
     })
