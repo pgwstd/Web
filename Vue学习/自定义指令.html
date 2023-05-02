@@ -19,11 +19,12 @@
         el: '#app',
         data: {
             n: 1,
-            message: 'Hello Vue!'
+            message: 'Hello Vue!',
+            name: '北海'
         },
         //自定义指令
         directives: {
-            big: function (el, binding) {
+            big(el, binding) {
                 el.innerHTML = binding.value * 10;
             }
         }
