@@ -28,10 +28,26 @@
             big(el, binding) {
                 el.innerHTML = binding.value * 10;
             },
-            fbind(el, binding){
+           /* fbind(el, binding){
                 el.value = binding.value;
                 el.oninput = function(){
                     app.n = el.value;
+                }
+            }*/
+            fbind:{
+                bind(){
+                    console.log('bind');
+                },
+                inserted(el, binding){
+                    /*el.value = binding.value;
+                    el.oninput = function(){
+                        app.n = el.value;
+                    }*/
+                    console.log('inserted');
+                },
+                update(el, binding){
+                   /* el.value = binding.value;*/
+                    console.log('update');
                 }
             }
         }
