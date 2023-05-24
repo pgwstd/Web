@@ -17,6 +17,14 @@
     data: {
       msg: 'hello'
     },
+    methods: {
+      changeMsg() {
+        this.msg = 'world'
+      }
+    },
+    mounted() {
+      console.log('mounted')
+    },
   })
 
 
