@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>生命周期</title>
-  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+    <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
 </head>
 <body>
 <div id="app">
-  <h2>{{msg}}</h2>
+    <h2>{{msg}}</h2>
+    <h2 :style="{opacity}">欢迎登录！！！</h2>
 </div>
 <script type="text/javascript">
-  Vue.config.productionTip = false;
+    Vue.config.productionTip = false;
 
-  new Vue({
-    el: '#app',
-    data: {
-      msg: 'hello'
-    },
-    methods: {
-      changeMsg() {
-        this.msg = 'world'
-      }
-    },
-    mounted() {
-      console.log('mounted')
-    },
-  })
+    new Vue({
+        el: '#app',
+        data: {
+            msg: 'hello',
+            opacity: 1
+        },
+        methods: {
+            changeMsg() {
+                this.msg = 'world'
+            }
+        },
+        mounted() {
+            //console.log('mounted')
+            setInterval(() => {
+                this.opacity -= 0.01
+                if (this.opacity <= 0) {
+                    this.opacity = 1
+                }
+            }, 16)
+        },
+    })
 
 
 </script>
