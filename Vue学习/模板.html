@@ -7,9 +7,55 @@
     </script>
 </head>
 <body>
+<div id="app">
+    <h2>{{msg}}</h2>
+    <school></school>
+    <hr>
+    <student></student>
+    <student></student>
+</div>
 <script type="text/javascript">
+    Vue.config.productionTip = false
 
+    const school = Vue.extend({
+        template: `
+            <div>
+                <h2>{{schoolName}}</h2>
+                <h2>{{address}}</h2>
+            </div>
+        `,
+        data() {
+            return {
+                schoolName: '清华大学',
+                address: '北京'
+            }
+        }
+    })
 
+    const student = Vue.extend({
+        template:`
+            <div>
+                <h2>{{stuName}}</h2>
+                <h2>{{age}}</h2>
+            </div>
+        `,
+        data() {
+            return {
+                stuName: '小明',
+                age: 18
+            }
+        }
+    })
+    new Vue({
+        el: '#app',
+        data:{
+            msg: 'hello'
+        },
+        components: {
+            school,
+            student
+        },
+    })
 </script>
 </body>
 </html>
