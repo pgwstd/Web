@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板2</title>
+    <script type="text/javascript" src="../Vue学习/js/vue.js">
+    </script>
+</head>
+<body>
+<div id="app">
+    <School></School>
+    <School></School>  
+    <School/>
+    <hr>
+</div>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false
+
+    const s = Vue.extend({
+        template: `
+          <div>
+          <h2>{{ schoolName }}</h2>
+          <h2>{{ address }}</h2>
+          </div>
+        `,
+        name:'Shl',
+        data() {
+            return {
+                schoolName: '清华大学',
+                address: '北京'
+            }
+        },
+        methods: {
+            sayHi() {
+                alert('hi')
+            }
+        }
+    })
+
+    new Vue({
+        el: '#app',
+        components: {
+            School:s
+        }
+    })
+
+</script>
+</body>
+</html>
