@@ -14,16 +14,19 @@
     <student></student>
     <student></student>
 </div>
+<div id="app2">
+    <hello></hello>
+</div>
 <script type="text/javascript">
     Vue.config.productionTip = false
 
     const school = Vue.extend({
         template: `
-            <div>
-                <h2>{{schoolName}}</h2>
-                <h2>{{address}}</h2>
-                <button @click.once="sayHi">点我</button>
-            </div>
+          <div>
+          <h2>{{ schoolName }}</h2>
+          <h2>{{ address }}</h2>
+          <button @click.once="sayHi">点我</button>
+          </div>
         `,
         data() {
             return {
@@ -31,19 +34,19 @@
                 address: '北京'
             }
         },
-       methods: {
-                sayHi() {
-                    alert('hi')
-                }
+        methods: {
+            sayHi() {
+                alert('hi')
             }
+        }
     })
 
     const student = Vue.extend({
-        template:`
-            <div>
-                <h2>{{stuName}}</h2>
-                <h2>{{age}}</h2>
-            </div>
+        template: `
+          <div>
+          <h2>{{ stuName }}</h2>
+          <h2>{{ age }}</h2>
+          </div>
         `,
         data() {
             return {
@@ -52,15 +55,35 @@
             }
         }
     })
+
+    const hello = Vue.extend({
+        template: `
+          <div>
+          <h2>{{ msg }}</h2>
+          </div>
+        `,
+        data() {
+            return {
+                msg: 'hello'
+            }
+        }
+    })
+    //全局注册组件
+    Vue.component('hello', hello)
     new Vue({
         el: '#app',
-        data:{
+        data: {
             msg: 'hello'
         },
         components: {
             school,
             student
         }
+    })
+
+    new Vue({
+        el: '#app2'
+
     })
 </script>
 </body>
