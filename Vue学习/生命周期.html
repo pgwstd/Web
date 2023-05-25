@@ -9,6 +9,7 @@
 <div id="app">
     <h2>{{msg}}</h2>
     <h2 :style="{opacity}">欢迎登录！！！</h2>
+    <button @click="stop">点击停止</button>
 </div>
 <script type="text/javascript">
     Vue.config.productionTip = false;
@@ -22,16 +23,23 @@
         methods: {
             changeMsg() {
                 this.msg = 'world'
+            },
+            stop() {
+                this.$destroy()
             }
         },
         mounted() {
             //console.log('mounted')
-            setInterval(() => {
+           this.time = setInterval(() => {
                 this.opacity -= 0.01
                 if (this.opacity <= 0) {
                     this.opacity = 1
                 }
             }, 16)
+        },
+        beforeCreate() {
+            console.log('beforeCreate')
+            clearInterval(this.time)
         },
     })
 
