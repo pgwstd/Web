@@ -18,13 +18,14 @@
     Vue.config.productionTip = false
 
     const s = Vue.extend({
+        name:'Shl', //组件名
         template: `
           <div>
           <h2>{{ schoolName }}</h2>
           <h2>{{ address }}</h2>
           </div>
         `,
-        name:'Shl',
+
         data() {
             return {
                 schoolName: '清华大学',
