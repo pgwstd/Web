@@ -8,8 +8,7 @@
 </head>
 <body>
 <div id="app">
-    <hello></hello>
-    <school></school>
+
     <hr>
 </div>
 
@@ -17,7 +16,7 @@
     Vue.config.productionTip = false
 
     const s = Vue.extend({
-        name:'Stu', //组件名
+        name: 'Stu', //组件名
         template: `
           <div>
           <h2>学生姓名:{{ Name }}</h2>
@@ -68,17 +67,30 @@
           <h2>hello</h2>
           </div>
         `,
-        data(){
+        data() {
             return {
-                msg:'hello'
+                msg: 'hello'
             }
         }
     })
+
+    const app = Vue.extend({
+        template: `
+          <div>
+          <hello></hello>
+          <school></school>
+          </div>
+        `,
+        components: {
+            hello,
+            school
+        }
+    })
     new Vue({
+        template:`<app></app>`,
         el: '#app',
         components: {
-           school,
-            hello
+            app
         }
     })
 
