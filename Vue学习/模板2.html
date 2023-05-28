@@ -8,6 +8,7 @@
 </head>
 <body>
 <div id="app">
+    <hello></hello>
     <school></school>
     <hr>
 </div>
@@ -61,10 +62,23 @@
         }
     })
 
+    const hello = Vue.extend({
+        template: `
+          <div>
+          <h2>hello</h2>
+          </div>
+        `,
+        data(){
+            return {
+                msg:'hello'
+            }
+        }
+    })
     new Vue({
         el: '#app',
         components: {
-           school
+           school,
+            hello
         }
     })
 
