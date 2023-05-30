@@ -10,7 +10,7 @@
 <script>
 // 组件交互的逻辑
 export default {
-    name: 'Student',
+    name: 'MyStudent',
     data(){
         return {
             name:'张三',

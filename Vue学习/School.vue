@@ -11,7 +11,7 @@
 <script>
 // 组件交互的逻辑
 export default {
-    name: 'School',
+    name: 'MySchool',
     data(){
         return {
             name:'清华大学',
