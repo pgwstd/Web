@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单文件组件</title>
+    <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+      <h1>{{ message }}</h1>
+        <button @click="show">显示</button>
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip = false
+
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        },
+        methods:{
+            show(){
+                alert(this.message)
+            }
+        }
+    })
+</script>
+</body>
+</html>
