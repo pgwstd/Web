@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置关系</title>
+  <script type="text/javascript" src="../Vue学习/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <school></school>
+</div>
+
+<script type="text/javascript">
+  Vue.config.productionTip = false
+
+  const school = Vue.extend({
+    template: '<p>123</p>',
+    data() {
+      return {
+        name: 'school'
+      }
+    },
+    methods: {
+      show() {
+        console.log('show')
+      }
+    }
+  })
+
+  console.log(school.prototype.__proto__ === Vue.prototype) // true
+  new Vue({
+    el: '#app',
+    components: {
+      school
+    },
+  })
+
+
+</script>
+</body>
+</html>
