@@ -17,4 +17,5 @@ export default {
         Student
     }
 }
+
 </script>
