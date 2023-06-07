@@ -1259,7 +1259,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// Support: Chrome 105 - 110+, Safari 15.4 - 16.3+
 	// Make sure the the `:has()` argument is parsed unforgivingly.
-	// We include `*` in the test to detect buggy implementations that are
+	// We include `*` in the day01 to detect buggy implementations that are
 	// _selectively_ forgiving (specifically when the list includes at least
 	// one valid selector).
 	// Note that we treat complete lack of support for `:has()` as if it were
@@ -1301,7 +1301,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// Support: IE<10
 	// Check if getElementById returns elements by name
 	// The broken getElementById methods don't pick up programmatically-set names,
-	// so use a roundabout getElementsByName test
+	// so use a roundabout getElementsByName day01
 	support.getById = assert( function( el ) {
 		docElem.appendChild( el ).id = expando;
 		return !document.getElementsByName || !document.getElementsByName( expando ).length;
@@ -1426,7 +1426,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			var input;
 
 			// Select is set to empty string on purpose
-			// This is to test IE's treatment of not explicitly
+			// This is to day01 IE's treatment of not explicitly
 			// setting a boolean content attribute,
 			// since its presence should be enough
 			// https://bugs.jquery.com/ticket/12359
@@ -1436,7 +1436,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 			// Support: IE8, Opera 11-12.16
 			// Nothing should be selected when empty strings follow ^= or $= or *=
-			// The test attribute must be unknown in Opera but "safe" for WinRT
+			// The day01 attribute must be unknown in Opera but "safe" for WinRT
 			// https://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
 			if ( el.querySelectorAll( "[msallowcapture^='']" ).length ) {
 				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
@@ -6664,7 +6664,7 @@ var rtrimCSS = new RegExp(
 		// IE/Edge misreport `getComputedStyle` of table rows with width/height
 		// set in CSS while `offset*` properties report correct values.
 		// Behavior in IE 9 is more subtle than in newer versions & it passes
-		// some versions of this test; make sure not to make it pass there!
+		// some versions of this day01; make sure not to make it pass there!
 		//
 		// Support: Firefox 70+
 		// Only Firefox includes border widths
@@ -6809,7 +6809,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 				return;
 			}
 
-			// Hook needed; redefine it so that the support test is not executed again.
+			// Hook needed; redefine it so that the support day01 is not executed again.
 			return ( this.get = hookFn ).apply( this, arguments );
 		}
 	};
@@ -7207,7 +7207,7 @@ jQuery.each( [ "height", "width" ], function( _i, dimension ) {
 			var matches,
 				styles = getStyles( elem ),
 
-				// Only read styles.position if the test has a chance to fail
+				// Only read styles.position if the day01 has a chance to fail
 				// to avoid forcing a reflow.
 				scrollboxSizeBuggy = !support.scrollboxSize() &&
 					styles.position === "absolute",

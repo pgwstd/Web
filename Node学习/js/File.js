@@ -5,7 +5,7 @@ const fs = require("fs");
 
 /*
 //打开
-let fd = fs.openSync("test.txt", "w");
+let fd = fs.openSync("day01.txt", "w");
 
 //写入
 fs.writeSync(fd, "今天天气真不错");

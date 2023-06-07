@@ -7,7 +7,7 @@ function mineReadFile(path){
     });
 }
 
-mineReadFile('/Users/panguangwei/WebGithub/Promise学习/test.txt').then((value) => {
+mineReadFile('/Users/panguangwei/WebGithub/Promise学习/day01.txt').then((value) => {
     console.log(value.toString());
 }, (reason) => {
     console.warn(reason);
