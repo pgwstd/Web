@@ -1,3 +1,4 @@
+<!--
 <template>
     <div id="app">
         <h1 v-text="msg" ref="title"></h1>
@@ -7,7 +8,7 @@
 </template>
 
 <script>
-import MySchool from "@/components/MySchool.vue";
+import MySchool from "@/components/MySchool.vue"; //使用@代表src目录
 
 export default {
     name: 'App',
@@ -29,3 +30,21 @@ export default {
 }
 </script>
 
+-->
+
+
+<template>
+    <div id="app">
+        <MyStudent />
+    </div>
+</template>
+
+
+<script>
+
+import MyStudent from "@/components/MyStudent.vue";
+
+export default ({
+    components: {MyStudent}
+})
+</script>
