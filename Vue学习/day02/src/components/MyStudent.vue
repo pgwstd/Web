@@ -27,6 +27,7 @@ export default {
         address:String, //接收字符串类型的数据
     }*/
 
+    //接收多个数据
     props:{
         address:{
             type:String,
