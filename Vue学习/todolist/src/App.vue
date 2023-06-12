@@ -1,20 +1,20 @@
 <template>
-  <div id="app">
-
-  </div>
+    <div id="app">
+        <MyHeader/>
+        <MyList/>
+    </div>
 </template>
 
 <script>
-import MyHeader from './components/MyHeader.vue'
-import MyList from './components/MyList.vue'
-import MyFooter from './components/MyFooter.vue'
+import MyHeader from '@/components/MyHeader.vue'
+import MyList from '@/components/MyList.vue'
+
 export default {
-  name: 'App',
-  components: {
-    MyHeader,
-    MyList,
-    MyFooter
-  }
+    name: 'App',
+    components: {
+        MyHeader,
+        MyList
+    }
 }
 </script>
 

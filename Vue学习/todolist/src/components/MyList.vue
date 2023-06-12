@@ -1,10 +1,10 @@
 <template>
-
+    <MyItem/>
 
 </template>
 
 <script>
-import MyItem from './MyItem.vue'
+import MyItem from '@/components/MyItem.vue';
 export default {
     name:'MyList',
     components:{
