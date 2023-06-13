@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name:'MyItem'
+    name:'MyItem',
 }
 
 </script>
@@ -72,6 +72,18 @@ li button:root{
     outline: none;
 }
 li button:empty{
+    outline: none;
+}
+li button:enabled{
+    outline: none;
+}
+li button:disabled{
+    outline: none;
+}
+li button:checked{
+    outline: none;
+}
+li button:default{
     outline: none;
 }
 </style>
