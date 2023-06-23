@@ -11,7 +11,6 @@ export default {
         MyItem
     }
 }
-
 </script>
 
 <style>
