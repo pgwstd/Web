@@ -1,12 +1,22 @@
 <template>
     <div class="todo-header">
-        <input type="text" placeholder="请输入你的任务名称，按回车键确认">
+        <input type="text" placeholder="请输入你的任务名称，按回车键确认" @keyup.enter="add" >
     </div>
 </template>
 
 <script>
+import {nanoid} from "nanoid";
 export default {
-    name: 'MyHeader'
+    name: 'MyHeader',
+    methods:{
+        add(e){
+            const todoObj = {
+                id: nanoid(),
+                title: e.target.value,
+                done: false
+            }
+        }
+    }
 }
 
 </script>
